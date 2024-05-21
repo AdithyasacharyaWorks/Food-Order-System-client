@@ -43,14 +43,14 @@ function MenuContainer({ data }) {
           </div>
           <div className='flex justify-end items-center'>
             {count === 0 ? (
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105" onClick={handleAddToCart}>
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105 rounded-tl-xl rounded-br-xl" onClick={handleAddToCart}>
                 Add to Cart
               </button>
             ) : (
               <div className="flex items-center">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded" onClick={handleDecrement}>-</button>
+                <button className="bg-blue-500  text-white font-bold py-2 px-6  rounded-tl-xl rounded-br-xl" onClick={handleDecrement}>-</button>
                 <p className="mx-2">{count}</p>
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded" onClick={handleIncrement}>+</button>
+                <button className="bg-blue-500  text-white font-bold py-2  px-6 rounded-tl-xl rounded-br-xl" onClick={handleIncrement}>+</button>
               </div>
             )}
           </div>
