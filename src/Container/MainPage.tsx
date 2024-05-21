@@ -11,7 +11,7 @@ function MainPage() {
   return (
     <div className="flex flex-col h-screen">
       {/* Sticky header with primary color */}
-      <Header className="sticky top-0 z-50 bg-blue-600 text-white" />
+      <Header className="sticky top-0 z-50 bg-blue-600 text-white" from={"home"} />
 
       {/* Container for featured section with constant heading */}
       <div className="bg-gray-100 p-2">
