@@ -1,20 +1,22 @@
-import CatogoryContainer from "../Components/CatogoryContainer"
+import CatogoryContainer from "../Components/CatogoryContainer";
+
 function Catogory() {
   return (
-    <div className="">
-        <div className="flex justify-center items-center">Catogory</div>
-        <div className="grid grid-cols-3 gap-5 p-2">
-            <CatogoryContainer />
-            <CatogoryContainer />
-            <CatogoryContainer />
-            <CatogoryContainer />
-            <CatogoryContainer />
-            <CatogoryContainer />
-            <CatogoryContainer />
-            <CatogoryContainer />
+    <div className="bg-gray-100 min-h-screen">
+      <div className="container mx-auto py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-3">
+          <CatogoryContainer />
+          <CatogoryContainer />
+          <CatogoryContainer />
+          <CatogoryContainer />
+          <CatogoryContainer />
+          <CatogoryContainer />
+          <CatogoryContainer />
+          <CatogoryContainer />
         </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Catogory
+export default Catogory;
