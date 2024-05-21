@@ -1,8 +1,9 @@
+import MainPage from "./Container/MainPage"
 function App() {
 
   return (
     <>
-      <h1 className="bg-red">App</h1>
+      <MainPage />
     </>
   )
 }
