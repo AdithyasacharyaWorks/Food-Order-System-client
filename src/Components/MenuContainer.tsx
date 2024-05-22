@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FaMoneyBill, FaUtensils, FaStar, FaDrumstickBite, FaAngleUp, FaAngleDown } from 'react-icons/fa';
+import {  useDispatch } from 'react-redux';
+import {addItem, removeItem, clearCart} from "../Redux/Slices/slice1"
 
 function MenuContainer({ data }) {
   // Determine the color and icon based on the type
@@ -9,16 +11,22 @@ function MenuContainer({ data }) {
   const [count, setCount] = useState(0);
   const [expanded, setExpanded] = useState(false);
 
+  const dispatch = useDispatch()
+
   const handleAddToCart = () => {
     setCount(count + 1);
+    dispatch(addItem(data))
+
   };
 
   const handleIncrement = () => {
     setCount(count + 1);
+    dispatch(addItem(data))
   };
 
   const handleDecrement = () => {
     setCount(count - 1);
+    dispatch(removeItem(data.id))
   };
 
   const toggleDescription = () => {
