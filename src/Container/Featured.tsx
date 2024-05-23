@@ -1,37 +1,32 @@
-import { useEffect, useState } from "react"
-import FeaturedContainer from "../Components/FeaturedContainer"
-import axios from "axios"
+import { useEffect, useState } from "react";
+import FeaturedContainer from "../Components/FeaturedContainer";
+import axios from "axios";
+import { MoonLoader } from "react-spinners";
 
 function Featured() {
+  const [menu, setMenus] = useState([]);
+  const [loader, setLoader] = useState(true);
 
-  const [menu,setMenus] = useState([])
-
-  useEffect(()=>{
-    axios.get('https://food-ordering-system-admin.vercel.app/api/getFeaturedMenus')
-    .then((res)=>
-      {
-        setMenus(res.data.responseData)
-      }
-    )
-  },[])
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BASE_URL}/getFeaturedMenus`)
+      .then((res) => {
+        setMenus(res.data.responseData);
+        setLoader(false);
+      });
+  }, []);
   return (
     <div className="mt-5">
-        <div className="flex overflow-x-auto gap-3 p-2">
-          {menu?.map((ele,index)=>{
-            return(
-              <FeaturedContainer key={index} data={ele}/>
-            )
-          })}
-            <FeaturedContainer />
-            <FeaturedContainer />
-            <FeaturedContainer />
-            <FeaturedContainer />
-            <FeaturedContainer />
-            <FeaturedContainer />
-            <FeaturedContainer />
-        </div>
+      <div className="flex justify-center items-center">
+        {loader ? <MoonLoader color="#424242" /> : ""}
+      </div>
+      <div className="flex overflow-x-auto gap-3 p-2">
+        {menu?.map((ele, index) => {
+          return <FeaturedContainer key={index} data={ele} />;
+        })}
+      </div>
     </div>
-  )
+  );
 }
 
-export default Featured
+export default Featured;

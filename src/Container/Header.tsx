@@ -1,10 +1,14 @@
 import {FaCartArrowDown} from 'react-icons/fa'
 import { Navigate,useNavigate } from 'react-router-dom';
 import { useSelector, UseSelector } from 'react-redux';
+import { useEffect } from 'react';
+import {dbid,client, col_id} from '../Appwrite/index'
 
 function Header({from}) {
   const numberOfCartItem = useSelector(state =>state.cartReducer.totalItems)
 
+
+  
 
   const navigate = useNavigate()
   const handleCartClick = ( ) =>{
